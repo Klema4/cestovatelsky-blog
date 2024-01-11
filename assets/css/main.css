@@ -13,7 +13,7 @@ body {
     --background-green: #FAFFF1;
     --background-blue: #f1f8ff;
 
-    --primary-green: #A6BF0A;
+    --primary-green: #8fa30d;
     --primary-light-text-green: #FDFFEE;
     --primary-dark-green: #373F0B;
 
@@ -69,7 +69,10 @@ nav {
     padding: 1.5rem calc(2rem + 1vw);
     z-index: 9999;
     position: fixed;
-    width: 100%;
+    width: calc(100% - 48px);
+    margin: 0 1.5rem 0 1.5rem;
+    border-radius: var(--br-lg);
+    background-color: var(--primary-dark-green);
 }
 
 .nav-logo a {
@@ -96,7 +99,7 @@ nav {
     height: 32px;
 }
 
-.nav-links a {
+.nav-links a, .nav-links button {
     font-size: calc(0.8rem + 0.2vw);
     font-weight: 500;
     color: var(--primary-light-text-green);
@@ -105,6 +108,7 @@ nav {
     margin: 0 0.1rem;
     border-radius: var(--br-xl);
     background-color: transparent;
+    border: none;
     display: flex;
     align-items: center;
     transition: background-color var(--transition), color var(--transition);
@@ -114,9 +118,13 @@ nav {
     margin-right: 0.25rem;
 }
 
-.nav-links a:hover {
-    color: var(--primary-light-text-green);
-    background-color: var(--primary-dark-green);
+.nav-links button i {
+    margin-right: 0;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+    color: var(--primary-dark-green);
+    background-color: var(--primary-light-text-green);
 }
 
 .header-blog-post {
@@ -124,9 +132,11 @@ nav {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
+    height: calc(100vh - 48px);
+    margin: 24px 24px;
     z-index: -1;
+    border-radius: var(--br-lg);
+    overflow: hidden;
 }
 
 .hbp-blur {
@@ -176,7 +186,7 @@ nav {
 }
 
 .nav-links.active {
-    height: 200px;
+    height: 175px;
     transition: height var(--transition);
 }
 
@@ -213,9 +223,23 @@ nav {
     font-weight: 500;
 }
 
+section {
+    padding: 1.5rem calc(2rem + 1vw);
+}
+
+.display-max {
+    font-size: calc(2rem + 2vw);
+}
+
 @media screen and (max-width: 768px) {
     .hbp-category {
-        right: -65%;
+        display: none;
+    }
+
+    .header-blog-post {
+        margin: 0;
+        border-radius: 0;
+        height: 100dvh;
     }
 
     nav {
@@ -244,11 +268,26 @@ nav {
         justify-content: center;
         align-items: center;
     }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    nav {
+        margin: 0;
+        width: 100%;
+        padding: 1.2rem;
+        border-radius: 0 0 var(--br-lg) var(--br-lg);
+    }
 }
 
-@media screen and (min-width: 768px) {
-    .hbp-category {
-        right: -25%;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    nav {
+        margin: 0;
+        width: 100%;
+        padding: 1.2rem;
+        border-radius: 0 0 var(--br-lg) var(--br-lg);
     }
 }
 
