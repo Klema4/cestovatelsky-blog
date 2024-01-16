@@ -24,12 +24,36 @@ function toggle_theme() {
     }
 }
 
-
-var theme = localStorage.getItem("theme");
-if (theme == "dark") {
-    document.body.classList.add("dark-theme");
-    theme_toggler.innerHTML = '<i class="ph-bold ph-moon"></i>';
+var cookies_consent = localStorage.getItem("cookies_consent");
+if (cookies_consent == "true") {
+    document.getElementById("cookies").style = "opacity: 0; visibility: hidden;";
 } else {
-    document.body.classList.remove("dark-theme");
-    theme_toggler.innerHTML = '<i class="ph-bold ph-sun"></i>';
+    document.getElementById("cookies").style = "opacity: 1; visibility: visible;";
+    // Block scrolling
+    document.body.style.overflow = "hidden";
+}
+
+function accept_cookies() {
+    localStorage.setItem("cookies_consent", "true");
+    document.getElementById("cookies").style = "opacity: 0; visibility: hidden;";
+    // Allow scrolling
+    document.body.style.overflow = "unset";
+}
+
+function decline_cookies() {
+    localStorage.setItem("cookies_consent", "false");
+    document.getElementById("cookies").style = "opacity: 0; visibility: hidden;";
+    // Allow scrolling
+    document.body.style.overflow = "unset";
+}
+
+if (cookies_consent == "true") {
+    var theme = localStorage.getItem("theme");
+    if (theme == "dark") {
+        document.body.classList.add("dark-theme");
+        theme_toggler.innerHTML = '<i class="ph-bold ph-moon"></i>';
+    } else {
+        document.body.classList.remove("dark-theme");
+        theme_toggler.innerHTML = '<i class="ph-bold ph-sun"></i>';
+    }
 }
