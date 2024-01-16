@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Klement | Cestovatelský blog</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-controls">
+            <div class="nav-logo">
+                <a href="./">Adam Klement</a>
+            </div>
+            <button class="nav-toggler" id="nav-toggler" onclick="toggle_navbar()">
+                <i class="ph-bold ph-list"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="./index.php"><i class="ph-bold ph-house"></i> Domů</a>
+            <a href="./about.php"><i class="ph-bold ph-tipi"></i> Tipy při cestování</a>
+            <a href="./blog.php"><i class="ph-bold ph-footprints"></i> Dej mi návrh</a>
+            <a href="./contact.php"><i class="ph-bold ph-link"></i> Linktree</a>
+            <button onclick="toggle_theme()" id="theme-toggler">
+                <i class="ph-bold ph-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <a href="/" class="btn btn-primary"><i class="ph-bold ph-arrow-left"></i> Zpět</a>
+        <img src="https://www.stubai.at/fileadmin/_processed_/d/8/csm_talpanorama-winter-stubaital_6a2c6b240f.jpg" alt="Obrázek" width="100%" class="img-article">
+        <div class="author article-author">
+            <img src="./assets/content/avatar.png" alt="Author image" class="avatar">
+            <span class="flex">
+                <h3>Adam Klement</h3>
+                <span>•</span>
+                <h3>10.08.2023</h3>
+            </span>
+        </div>
+        <h1 class="article-header">Je Stubaital nejhezčí místo v Rakousku?</h1>
+        <div class="article-content">
+            <p>Už nejednou jsem byl v Rakousku, ovšem jsem ho neprocestoval celé skrz naskrz. Tentokrát jsme se vydali k Innsbrucku, přesněji do Stubaitalu, kde byl náš týdenní pobyt určen.</p>
+        </div>
+    </header>
+
+    <div id="cookies" class="cookies-background">
+        <div class="cookies">
+            <div class="cookies-content">
+                <h1>🍪 Taky máte rádi cookies?</h1>
+                <p>Na tomto webu máme pár funkcí, které pro absolutní fungování (když se vrátíte zpět) potřebují cookies. Pokud cookies odmítnete, žádné věci se neuloží (uložíme pouze cookies, že nechcete zapínat extra funkce).</p>
+                <button class="btn btn-primary" onclick="accept_cookies()">Souhlasím</button>
+                <button class="btn btn-secondary" onclick="decline_cookies()">Nesouhlasím</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
