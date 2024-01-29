@@ -19,12 +19,12 @@ body {
 
     --primary-green: #8fa30d;
     --primary-light-text-green: #FDFFEE;
-    --primary-dark-green: #373F0B;
+    --primary-dark-green: #0f0f0d;
 
     --secondary-blue: #0A84BF;
     --secondary-light-text-blue: #F1F8FF;
-    --secondary-dark-blue: #0B373F;
-    --secondary-dark-blue2: #0f4b57;
+    --secondary-dark-blue: #111213;
+    --secondary-dark-blue2: #16191a;
 
     --tertiary-red: #BF0A0A;
     --tertiary-light-text-red: #FFF1F1;
@@ -524,6 +524,17 @@ body.dark-theme footer {
     font-size: calc(1rem + 0.15vw);
     margin: 1rem 0;
     font-weight: 500;
+}
+
+.img-content {
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--br-lg);
+}
+
+.max-height-xl {
+    max-height: 1200px;
 }
 
 @media screen and (min-width: 768px) {
