@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Klement | Je Stubaital nejhezčí místo v Rakousku?</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-controls">
+            <div class="nav-logo">
+                <a href="./">Adam Klement</a>
+            </div>
+            <button class="nav-toggler" id="nav-toggler" onclick="toggle_navbar()">
+                <i class="ph-bold ph-list"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="./"><i class="ph-bold ph-house"></i> Domů</a>
+            <a href="./tipy.html"><i class="ph-bold ph-tipi"></i> Tipy při cestování</a>
+            <a href="./navrhy.html"><i class="ph-bold ph-footprints"></i> Dej mi návrh</a>
+            <a href="https://adam-klement.cz/linktree"><i class="ph-bold ph-link"></i> Linktree</a>
+            <button onclick="toggle_theme()" id="theme-toggler">
+                <i class="ph-bold ph-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <a href="/" class="btn btn-primary"><i class="ph-bold ph-arrow-left"></i> Zpět</a>
+        <form action="navrhy.html" method="post">
+            <h1>Kam bych měl vyrazit?</h1>
+            <input type="text" class="input w-100" name="nazev" id="nazev" placeholder="Název místa" required>
+            <input type="text" class="input w-100" name="stat" id="stat" placeholder="V jaké zemi se to nachází?" required>
+            <textarea name="poznamky" class="input w-100" id="poznamky" cols="30" rows="10" placeholder="Popiš mi místo níže" required></textarea>
+            <button type="submit" class="btn btn-primary w-100">Odeslat</button>
+        </form>
+    </header>
+
+    <footer>
+        <div class="flex-footer">
+            <div>
+                <h1 class="m0-h">Adam Klement</h1>
+                <p class="m0-p">© 2024 | Všechna práva vyhrazena.</p>
+            </div>
+            <div class="gaps">
+                <a href="https://instagram.com/adam__klement" class="btn btn-secondary"><i class="ph-bold ph-instagram-logo"></i></a>
+                <a href="https://youtube.com/Klema4" class="btn btn-secondary"><i class="ph-bold ph-youtube-logo"></i></a>
+                <a href="https://discord.gg/uceni" class="btn btn-secondary"><i class="ph-bold ph-discord-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookies" class="cookies-background">
+        <div class="cookies">
+            <div class="cookies-content">
+                <h1>🍪 Taky máte rádi cookies?</h1>
+                <p>Na tomto webu máme pár funkcí, které pro absolutní fungování (když se vrátíte zpět) potřebují cookies. Pokud cookies odmítnete, žádné věci se neuloží (uložíme pouze cookies, že nechcete zapínat extra funkce).</p>
+                <button class="btn btn-primary" onclick="accept_cookies()">Souhlasím</button>
+                <button class="btn btn-secondary" onclick="decline_cookies()">Nesouhlasím</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Listen to form submit
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let nazev = document.getElementById('nazev').value;
+            let stat = document.getElementById('stat').value;
+            let poznamky = document.getElementById('poznamky').value;
+
+            // Send data to Discord webhook
+            fetch('https://canary.discord.com/api/webhooks/1204094502491394099/9wT1jYQvhlfnQIZH-h7jVyEmlNTZdL-ZjxADN1JopYeYVOcMmlSidP-SdwONCXTp_jTR', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: `**Návrh místa:** ${nazev}\n**Stát:** ${stat}\n**Poznámky:** ${poznamky}`
+                })
+            }).then(() => {
+                alert('Návrh byl úspěšně odeslán! Děkuji.');
+            });
+        });
+    </script>
+</body>
+</html>

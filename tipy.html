@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Klement | Je Stubaital nejhezčí místo v Rakousku?</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-controls">
+            <div class="nav-logo">
+                <a href="./">Adam Klement</a>
+            </div>
+            <button class="nav-toggler" id="nav-toggler" onclick="toggle_navbar()">
+                <i class="ph-bold ph-list"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="./"><i class="ph-bold ph-house"></i> Domů</a>
+            <a href="./tipy.html"><i class="ph-bold ph-tipi"></i> Tipy při cestování</a>
+            <a href="./navrhy.html"><i class="ph-bold ph-footprints"></i> Dej mi návrh</a>
+            <a href="https://adam-klement.cz/linktree"><i class="ph-bold ph-link"></i> Linktree</a>
+            <button onclick="toggle_theme()" id="theme-toggler">
+                <i class="ph-bold ph-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <a href="/" class="btn btn-primary"><i class="ph-bold ph-arrow-left"></i> Zpět</a>
+        <h1 class="article-header">Tipy při cestování, ať už jedete kamkoliv</h1>
+        <div class="article-content">
+            <h1>1. Dokumenty:</h1>
+            <ul>
+                <li>Pas (kontroluj jeho platnost)</li>
+                <li>Víza (když jsou potřeba)</li>
+                <li>Letenky nebo rezervace</li>
+            </ul>
+            <h1>2. Finanční záležitosti:</h1>
+            <ul>
+                <li>Hotovost (v místní měně)</li>
+                <li>Kreditní/debetní karty</li>
+                <li>Záložní hotovost na nečekané situace</li>
+            </ul>
+            <h1>3. Zdraví a bezpečnost:</h1>
+            <ul>
+                <li>Cestovní pojištění</li>
+                <li>Léky a kopie receptů</li>
+                <li>Telefonní čísla pro případ nouze</li>
+            </ul>
+            <h1>4. Balení:</h1>
+            <ul>
+                <li>Oblečení podle klimatu a délky pobytu</li>
+                <li>Hygienické potřeby</li>
+                <li>Nabíječky a adaptéry pro elektroniku</li>
+                <li>Praktický batoh nebo kufr</li>
+            </ul>
+            <h1>5. Technika:</h1>
+            <ul>
+                <li>Mobil s datovým roamingem nebo místní SIM kartou</li>
+                <li>Notebook nebo tablet</li>
+                <li>Sluchátka a nabíječky</li>
+            </ul>
+            <h1>6. Doklady a zálohy:</h1>
+            <ul>
+                <li>Kopie důležitých dokumentů (pas, pojištění)</li>
+                <li>Adresy nebo kontakty v případě ztráty</li>
+            </ul>
+            <h1>7. Zábava a pohoda:</h1>
+            <ul>
+                <li>Knížky, čtečka, nebo to, co tě baví</li>
+                <li>Sluneční brýle a opalovací krém</li>
+                <li>Místní průvodce a mapa</li>
+            </ul>
+            <h1>8. Ostatní:</h1>
+            <ul>
+                <li>Místní měna nebo kredit na platební kartě</li>
+                <li>Nějaký menší batůžek na výlety</li>
+                <li>Prázdná láhev na vodu pro pití na cestách</li>
+            </ul>
+        </div>
+    </header>
+
+    <footer>
+        <div class="flex-footer">
+            <div>
+                <h1 class="m0-h">Adam Klement</h1>
+                <p class="m0-p">© 2024 | Všechna práva vyhrazena.</p>
+            </div>
+            <div class="gaps">
+                <a href="https://instagram.com/adam__klement" class="btn btn-secondary"><i class="ph-bold ph-instagram-logo"></i></a>
+                <a href="https://youtube.com/Klema4" class="btn btn-secondary"><i class="ph-bold ph-youtube-logo"></i></a>
+                <a href="https://discord.gg/uceni" class="btn btn-secondary"><i class="ph-bold ph-discord-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookies" class="cookies-background">
+        <div class="cookies">
+            <div class="cookies-content">
+                <h1>🍪 Taky máte rádi cookies?</h1>
+                <p>Na tomto webu máme pár funkcí, které pro absolutní fungování (když se vrátíte zpět) potřebují cookies. Pokud cookies odmítnete, žádné věci se neuloží (uložíme pouze cookies, že nechcete zapínat extra funkce).</p>
+                <button class="btn btn-primary" onclick="accept_cookies()">Souhlasím</button>
+                <button class="btn btn-secondary" onclick="decline_cookies()">Nesouhlasím</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
